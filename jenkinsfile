@@ -1,10 +1,33 @@
 pipeline {
-    agents any
-        stages {
-            stage ("Hello Stage") {
+    agent any
+        stages ('Installing Roboshop Components') {
+           parllel {
+               stage ('shipping') {
+                   steps {
+                   echo installing shipping roles
+               }
+               }
+               stage ('cart') {
+                   steps {
+                   echo installing cart roles
+               }
+               }
+               stage ('catalogue') {
+                   steps {
+                   echo installing catalogue roles
+               }
+               }
+               stage ('payment') {
+                   steps {
+                   echo installing payment role
+               }
+               }
+            stage ('installing frontend') {
                 steps {
-                   echo "Hello steps" 
-                } //steps
-            } //stage
-        } //stages
-} //pipeline
+                    echo installing frontend
+                }
+            }
+        }     
+
+    }
+}
