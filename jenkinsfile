@@ -1,15 +1,15 @@
 pipeline {
     agent any
-        stages {
-            stage ('installing roboshop components') {
-                parllel {
-                    stage {
-                        steps {
-                echo 'installing catalogue'
+    stages {
+        stage ('installing roboshop components') {
+            parllel {
+                stage {
+                    steps {
+                        echo 'installing catalogue'
                     }
-                    stage ('installing cart') {
-                        steps {
-                echo 'installing cart'
+                stage ('installing cart') {
+                     steps {
+                        echo 'installing cart'
                 }
               }
             }
