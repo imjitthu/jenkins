@@ -2,15 +2,17 @@ pipeline {
     agent any
         stages {
             stage ('installing roboshop components') {
-            steps {
+                parllel {
+                    stage {
+                        steps {
                 echo 'installing catalogue'
                     }
-            stage ('installing cart') {
-            steps {
+                    stage ('installing cart') {
+                        steps {
                 echo 'installing cart'
                 }
               }
             }
           }  
         }
-            
+    }   
