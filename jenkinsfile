@@ -3,7 +3,7 @@ pipeline {
 
     stages {
 
-        stage ('installing roboshop components') {
+        stage('installing roboshop components') {
             parallel {
                 stage('installing catalogue') {
                     steps {
@@ -29,7 +29,8 @@ pipeline {
                     steps {
                         echo 'installing payment'
                     }
-                    }    
+                    }
+                    } //parallel  1  
         stage('installing Databases') {
             parallel {
                 stage('installing MongoDB') {
@@ -43,6 +44,7 @@ pipeline {
                             echo 'installing MySQL'
                     }
                     }
+                    } //parallel 2
         stage('installing Redis cache server') {
             steps {
                 echo 'installing Redis Server'
@@ -64,5 +66,4 @@ pipeline {
               }
             }
           }  
-        }
-}
+        
