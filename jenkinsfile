@@ -1,6 +1,6 @@
 pipeline {
     agent any
-        stages ('setup roboshop project') {
+        stages {
             stage ('installing roboshop components') {
                 steps {
                     echo 'installing catalogue'
