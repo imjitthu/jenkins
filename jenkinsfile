@@ -1,8 +1,10 @@
 pipeline {
     agent any
+
     stages {
+
         stage ('installing roboshop components') {
-            parllel {
+            parallel {
                 stage {
                     steps {
                         echo 'installing catalogue'
