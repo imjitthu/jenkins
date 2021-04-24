@@ -13,9 +13,56 @@ pipeline {
                 stage('installing cart') {
                      steps {
                         echo 'installing cart'
-                }
-                }
+                    }
+                    }
+                stage('installing shipping') {
+                    steps {
+                        echo 'installing shipping'
+                    }
+                    }
+                stage('installing user') {
+                    steps {
+                        echo 'installing user'
+                    }
+                    }
+                stage('installing payment') {
+                    steps {
+                        echo 'installing payment'
+                    }
+                    }    
+        stage('installing Databases') {
+            parallel {
+                stage('installing MongoDB') {
+                    steps {
+                        echo 'installing MongoDB'
+                    }
+                    }
+                stage('installing MySQL') {
+                    stage('installing MySQL') {
+                        steps {
+                            echo 'installing MySQL'
+                    }
+                    }
+        stage('installing Redis cache server') {
+            steps {
+                echo 'installing Redis Server'
+                    }
+                    }
+        stage('installing RabbitMQ server') {
+            steps {
+                echo 'installing RabbitMQ Server'
+                    }
+                    }
+        stage('installing frontend server') {
+            steps {
+                echo 'installing frontend server'
+                    }
+                    }
+            }
+        }
+
               }
             }
           }  
         }
+}
