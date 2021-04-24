@@ -3,11 +3,11 @@ pipeline {
         stages ('setup roboshop project') {
             stage ('installing roboshop components') {
                 steps {
-                    echo installing catalogue
+                    echo 'installing catalogue'
                 }
             stage ('installing cart') {
                 steps {
-                    echo installing cart
+                    echo 'installing cart'
                 }
               }
             }
