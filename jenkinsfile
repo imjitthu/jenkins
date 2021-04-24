@@ -40,12 +40,10 @@ pipeline {
                     }
                     }
                 stage('installing MySQL') {
-                    stage('installing MySQL') {
-                        steps {
-                            echo 'installing MySQL'
+                    steps('installing MySQL') {
+                        echo 'installing MySQL'
                     }
-                    }
-                    }
+                    }                    
                     } //parallel 2
                     } //stage
         stage('installing Redis cache server') {
