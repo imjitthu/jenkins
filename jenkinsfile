@@ -5,7 +5,7 @@ pipeline {
 
         stage ('installing roboshop components') {
             parallel {
-                stage {
+                stage ('installing catalogue') {
                     steps {
                         echo 'installing catalogue'
                     }
