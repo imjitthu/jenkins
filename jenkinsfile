@@ -1,33 +1,16 @@
 pipeline {
     agent any
-        stages ('Installing Roboshop Components') {
-           parllel {
-               stage ('shipping') {
-                   steps {
-                   echo installing shipping roles
-               }
-               }
-               stage ('cart') {
-                   steps {
-                   echo installing cart roles
-               }
-               }
-               stage ('catalogue') {
-                   steps {
-                   echo installing catalogue roles
-               }
-               }
-               stage ('payment') {
-                   steps {
-                   echo installing payment role
-               }
-               }
-            stage ('installing frontend') {
+        stages ('setup roboshop project') {
+            stage ('installing roboshop components') {
                 steps {
-                    echo installing frontend
+                    echo installing catalogue
+                }
+            stage ('installing cart') {
+                steps {
+                    echo installing cart
                 }
             }
-        }     
+            }
 
-    }
-}
+        }
+            
