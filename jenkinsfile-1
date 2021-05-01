@@ -1,0 +1,79 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('installing roboshop components') {
+            parallel {
+                stage('installing catalogue') {
+                    steps {
+                        echo 'installing catalogue'
+                        sh 'sleep 5s'
+                    }
+                    }
+                stage('installing cart') {
+                     steps {
+                        echo 'installing cart'
+                        sh 'sleep 5s'
+                    }
+                    }
+                stage('installing shipping') {
+                    steps {
+                        echo 'installing shipping'
+                        sh 'sleep 5s'
+                    }
+                    }
+                stage('installing user') {
+                    steps {
+                        echo 'installing user'
+                        sh 'sleep 5s'
+                    }
+                    }
+                stage('installing payment') {
+                    steps {
+                        echo 'installing payment'
+                        sh 'sleep 5s'
+                    }
+                    }
+                    } //parallel  1 
+                    } //stage 
+        stage('installing Databases') {
+            parallel {
+                stage('installing MongoDB') {
+                    steps {
+                        echo 'installing MongoDB'
+                        sh 'sleep 5s'
+                    }
+                    }
+                stage('installing MySQL') {
+                    steps('installing MySQL') {
+                        echo 'installing MySQL'
+                        sh 'sleep 5s'
+                    }
+                    }                    
+                    } //parallel 2
+                    } //stage
+        stage('installing Redis cache server') {
+            steps {
+                echo 'installing Redis Server'
+                    }
+                    }
+        stage('installing RabbitMQ server') {
+            steps {
+                echo 'installing RabbitMQ Server'
+                sh 'sleep 5s'
+                    }
+                    }
+        stage('installing frontend server') {
+            steps {
+                echo 'installing frontend server'
+                sh 'sleep 5s'
+                    }
+                    }
+        stage('Roboshop components installed successfully')
+            steps {
+                echo 'installing compononts finished'
+                sh 'sleep 10s'
+                  }
+        }
+        }
