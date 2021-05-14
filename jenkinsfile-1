@@ -18,7 +18,7 @@ pipeline {
                     steps {
                         echo 'installing catalogue'
                         sh 'sleep 5s'
-                        echo ${Author}
+                        echo "${Author}"
                     }
                     }
                 stage('installing cart') {
