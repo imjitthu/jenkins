@@ -5,9 +5,9 @@ pipeline {
         Author = "Jithendar"
     }
 
-    tools {
-    terraform 'terraform'
-    }
+    //tools {
+    //terraform 'terraform'
+    //}
 
     stages {
 
