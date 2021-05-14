@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    environment {
+        Author = "Jithendar"
+        USERPASS = credentials('DevOps') 
+    }
+
     tools {
     terraform 'terraform'
     }
@@ -13,6 +18,7 @@ pipeline {
                     steps {
                         echo 'installing catalogue'
                         sh 'sleep 5s'
+                        echo ${Author}
                     }
                     }
                 stage('installing cart') {
