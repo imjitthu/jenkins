@@ -74,10 +74,11 @@ pipeline {
                 sh 'sleep 5s'
                     }
                     }
-        stage('Roboshop components installed successfully')
+        stage('Roboshop components installed successfully') {
             steps {
                 echo 'installing compononts finished'
                 sh 'sleep 10s'
+                  }
                   }
         }
         }
