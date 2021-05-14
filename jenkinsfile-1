@@ -5,10 +5,6 @@ pipeline {
         Author = "Jithendar"
     }
 
-    tools {
-    terraform 'terraform'
-    }
-
     stages {
 
         stage('installing roboshop components') {
