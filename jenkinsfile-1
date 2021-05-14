@@ -3,7 +3,6 @@ pipeline {
 
     environment {
         Author = "Jithendar"
-        USERPASS = credentials('DevOps') 
     }
 
     tools {
