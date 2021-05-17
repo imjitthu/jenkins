@@ -69,7 +69,7 @@ pipeline {
                 sh 'sleep 5s'
                     }
                     }
-        stage('installing frontend server') {
+        stage('installing frontend web-server') {
             steps {
                 sh'''
                     echo 'installing frontend server'
