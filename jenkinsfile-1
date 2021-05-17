@@ -81,7 +81,7 @@ pipeline {
                     echo 'installing frontend server'
                     cd terraform/frontend
                     terraform init
-                    terraform destory -auto-approve
+                    terraform destroy -auto-approve
                 ''' }  
                     }
                     }
