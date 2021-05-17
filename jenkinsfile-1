@@ -75,7 +75,6 @@ pipeline {
             steps {
                 withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'awskey', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
                 echo 'AWS Credentials'
-                   }
                 echo 'Downloading from GITHub'
                 git 'https://github.com/imjitthu/terraform.git'
                 sh'''
@@ -84,7 +83,7 @@ pipeline {
                     terraform init
                     terraform apply -auto-approve
                     sleep 1s
-                '''    
+                ''' }  
                     }
                     }
         stage('Roboshop components installed successfully') {
