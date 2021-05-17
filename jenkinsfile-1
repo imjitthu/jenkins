@@ -8,32 +8,32 @@ pipeline {
                 stage('installing catalogue') {
                     steps {
                         echo 'installing catalogue'
-                        sh 'sleep 5s'
+                        sh 'sleep 1s'
                         
                     }
                     }
                 stage('installing cart') {
                      steps {
                         echo 'installing cart'
-                        sh 'sleep 5s'
+                        sh 'sleep 1s'
                     }
                     }
                 stage('installing shipping') {
                     steps {
                         echo 'installing shipping'
-                        sh 'sleep 5s'
+                        sh 'sleep 1s'
                     }
                     }
                 stage('installing user') {
                     steps {
                         echo 'installing user'
-                        sh 'sleep 5s'
+                        sh 'sleep 1s'
                     }
                     }
                 stage('installing payment') {
                     steps {
                         echo 'installing payment'
-                        sh 'sleep 5s'
+                        sh 'sleep 1s'
                     }
                     }
                     } //parallel  1 
@@ -43,13 +43,13 @@ pipeline {
                 stage('installing MongoDB') {
                     steps {
                         echo 'installing MongoDB'
-                        sh 'sleep 5s'
+                        sh 'sleep 1s'
                     }
                     }
                 stage('installing MySQL') {
                     steps('installing MySQL') {
                         echo 'installing MySQL'
-                        sh 'sleep 5s'
+                        sh 'sleep 1s'
                     }
                     }                    
                     } //parallel 2
@@ -62,7 +62,7 @@ pipeline {
         stage('installing RabbitMQ server') {
             steps {
                 echo 'installing RabbitMQ Server'
-                sh 'sleep 5s'
+                sh 'sleep 1s'
                     }
                     }
         stage('installing frontend web-server') {
@@ -74,7 +74,7 @@ pipeline {
                     cd terraform/frontend
                     terraform init
                     terraform apply -auto-approve
-                    sleep 5s
+                    sleep 1s
                 '''    
                     }
                     }
