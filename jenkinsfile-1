@@ -67,11 +67,13 @@ pipeline {
                     }
         stage('installing frontend server') {
             steps {
-                echo 'installing frontend server'
-                git 'https://github.com/imjitthu/terraform.git'
-                cd terraform/frontend
-                terraform apply -auto-approve
-                sh 'sleep 5s'
+                sh'''
+                    echo 'installing frontend server'
+                    git 'https://github.com/imjitthu/terraform.git'
+                    cd terraform/frontend
+                    terraform apply -auto-approve
+                    sleep 5s
+                '''    
                     }
                     }
         stage('Roboshop components installed successfully') {
