@@ -7,7 +7,9 @@ pipeline {
     }
 
     stages {
-
+        withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'awskey', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+    // some block
+            }
         stage('installing roboshop components') {
             parallel {
                 stage('installing catalogue') {
