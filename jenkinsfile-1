@@ -71,9 +71,10 @@ pipeline {
                     }
         stage('installing frontend web-server') {
             steps {
+                echo 'Downloading from GITHub'
+                git 'https://github.com/imjitthu/terraform.git'
                 sh'''
                     echo 'installing frontend server'
-                    git 'https://github.com/imjitthu/terraform.git'
                     cd terraform/frontend
                     terraform init
                     terraform apply -auto-approve
