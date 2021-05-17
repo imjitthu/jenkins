@@ -73,7 +73,6 @@ pipeline {
                     }
         stage('installing frontend web-server') {
             steps {
-                withAWS(credentials: 'awskey', region: 'us-east-1')
                 echo 'Downloading from GITHub'
                 git 'https://github.com/imjitthu/terraform.git'
                 sh'''
