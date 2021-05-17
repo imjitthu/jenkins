@@ -69,7 +69,7 @@ pipeline {
             steps {
                 sh'''
                     echo 'installing frontend server'
-                    git 'https://github.com/imjitthu/terraform.git'
+                    git clone https://github.com/imjitthu/terraform.git
                     cd terraform/frontend
                     terraform apply -auto-approve
                     sleep 5s
