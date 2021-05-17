@@ -68,6 +68,9 @@ pipeline {
         stage('installing frontend server') {
             steps {
                 echo 'installing frontend server'
+                git 'https://github.com/imjitthu/terraform.git'
+                cd terraform/frontend
+                terraform apply -auto-approve
                 sh 'sleep 5s'
                     }
                     }
