@@ -1,6 +1,12 @@
 pipeline {
     agent any
 
+  options { disableConcurrentBuilds() }
+
+  tools {
+    terraform 'terraform'
+  }
+
     environment {
         AWS_ACCESS_KEY_ID     = credentials('awskey')
         AWS_SECRET_ACCESS_KEY = credentials('awskey")
