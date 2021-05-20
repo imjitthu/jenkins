@@ -5,7 +5,7 @@ pipeline {
 
     stages ('Groovy Script examples') {
 
-        stage('installing roboshop components') {
+        stage('Groovy Script') {
         Script {
             def x = 104
             println x.getClass()
