@@ -3,11 +3,16 @@ pipeline {
 
     options { disableConcurrentBuilds() }
 
-//    tools {
-//        terraform 'terraform'
-//    }
-
-    stages {
+    stages ('Groovy Script examples') {
 
         stage('installing roboshop components') {
-            
+        Script {
+            public class Demo {
+            public static void main(String args[]) {
+            System.out.println("Hello World");
+                }
+        }
+        }
+        }
+    }
+}
