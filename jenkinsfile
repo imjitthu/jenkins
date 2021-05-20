@@ -6,13 +6,20 @@ pipeline {
     stages ('Groovy Script examples') {
         stage('Groovy Script') {
             steps('Groovy Script') {
-            Script {
-                def x = 104
-                println x.getClass()
-                x = "DevOps321"
-                println x.getClass()
-                }
+            // Script {
+            //     def x = 104
+            //     println x.getClass()
+            //     x = "DevOps321"
+            //     println x.getClass()
+            //     }
+            script {
+                def browsers = ['chrome', 'firefox']
+                for (int i = 0; i < browsers.size(); ++i) {
+                echo "Testing the ${browsers[i]} browser"
+                }    
                 }
         }    
         }
         }
+
+                
