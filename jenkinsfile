@@ -4,14 +4,15 @@ pipeline {
     options { disableConcurrentBuilds() }
 
     stages ('Groovy Script examples') {
-
         stage('Groovy Script') {
-        Script {
-            def x = 104
-            println x.getClass()
-            x = "Guru99"
-            println x.getClass()
+            steps('Groovy Script') {
+            Script {
+                def x = 104
+                println x.getClass()
+                x = "Guru99"
+                println x.getClass()
                 }
                 }
+        }    
         }
         }
