@@ -8,7 +8,7 @@ pipeline {
             steps('Groovy Script') {
                 script {
                 def web = ['chrome', 'firefox']
-                println ${web[0]}
+                echo "${web[0]}"
                 }
                 script {
                 def browsers = ['chrome', 'firefox']
