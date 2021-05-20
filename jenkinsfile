@@ -7,9 +7,10 @@ pipeline {
 
         stage('installing roboshop components') {
         Script {
-            public class Demo {
-            public static void main(String args[]) {
-            System.out.println("Hello Groovy");
+            def x = 104
+            println x.getClass()
+            x = "Guru99"
+            println x.getClass()
                 }
                 }
         }
