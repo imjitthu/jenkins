@@ -9,7 +9,7 @@ pipeline {
             Script {
                 def x = 104
                 println x.getClass()
-                x = "Guru99"
+                x = "DevOps321"
                 println x.getClass()
                 }
                 }
