@@ -11,7 +11,7 @@ pipeline {
                 echo "${web[0]}"
                 println "${web[1]}"
                 for (int j = 0; j < web.size(); ++j )
-                println ${web[j]}
+                println "${web[j]}"
                 }
                 script {
                 def browsers = ['chrome', 'firefox']
