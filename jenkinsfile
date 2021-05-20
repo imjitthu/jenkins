@@ -7,15 +7,13 @@ pipeline {
         stage('Groovy Script') {
             steps('Groovy Script') {
             Script {
-                def x = """Groovy
-                at
-                Guru99"""
+                def x = ['chrome', 'firefox']
                 println x
                 }
             script {
                 def browsers = ['chrome', 'firefox']
                 for (int i = 0; i < browsers.size(); ++i) {
-                echo "Testing the ${browsers[i]} browser"
+                println "Testing the ${browsers[i]} browser"
                 //output:
                 //Testing the chrome browser
                 //Testing the firefox browser
