@@ -10,6 +10,7 @@ pipeline {
                 def web = ['chrome', 'firefox']
                 echo "${web[0]}"
                 println "${web[1]}"
+                echo "${web[0],[1]}"
                 }
                 script {
                 def browsers = ['chrome', 'firefox']
