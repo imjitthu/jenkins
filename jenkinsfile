@@ -6,10 +6,10 @@ pipeline {
     stages ('Groovy Script examples') {
         stage('Groovy Script') {
             steps('Groovy Script') {
-                // script {
-                // def web = ['chrome', 'firefox']
-                // echo ${web[0]}
-                // }
+                script {
+                def web = ['chrome', 'firefox']
+                echo ${web[0]}
+                }
                 script {
                 def browsers = ['chrome', 'firefox']
                 for (int i = 0; i < browsers.size(); ++i) {
