@@ -5,6 +5,7 @@ pipeline {
 
     stage('Frontend') {
       steps {
+        sh 'pwd'
         build job: 'rs-project/frontend'
         //build job: 'rs-project/frontend', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
       }
