@@ -6,7 +6,7 @@ pipeline {
     stage('frontend') {
       steps {
         sh 'pwd'
-        build job: 'Terraform-Releases/VPC'
+        build job: 'rs-project/frontend'
       }
     }
   }
