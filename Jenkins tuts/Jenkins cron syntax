@@ -33,7 +33,8 @@ Empty lines and lines that start with # will be ignored as comments.
 
 In addition, @yearly, @annually, @monthly, @weekly, @daily, @midnight, and @hourly are supported as convenient aliases. These use the hash system for automatic balancing. For example, @hourly is the same as H * * * * and could mean at any time during the hour. @midnight actually means some time between 12:00 AM and 2:59 AM.
 
-Table 1. Jenkins cron syntax examples
+Table 1. Jenkins cron syntax examples:
+
 every fifteen minutes (perhaps at :07, :22, :37, :52)
 
 triggers{ cron('H/15 * * * *') }
