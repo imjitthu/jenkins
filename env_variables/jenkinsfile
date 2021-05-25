@@ -5,11 +5,12 @@ pipeline {
     stages ('The following variables are available to shell scripts') {
         stage ('BRANCH_NAME') {
             steps {
-            echo "${BRANCH_NAME}"
-            //For a multibranch project, this will be set to the name of the branch being built, for example in case you wish to deploy to production from master but not from feature branches; if corresponding to some kind of change request, the name is generally arbitrary (refer to CHANGE_ID and CHANGE_TARGET).
+                print(env.first_path)
+                //echo "${BRANCH_NAME}"
+                //For a multibranch project, this will be set to the name of the branch being built, for example in case you wish to deploy to production from master but not from feature branches; if corresponding to some kind of change request, the name is generally arbitrary (refer to CHANGE_ID and CHANGE_TARGET).
 
-            echo "${var.BRANCH_IS_PRIMARY}"
-            //For a multibranch project, if the SCM source reports that the branch being built is a primary branch, this will be set to "true"; else unset. Some SCM sources may report more than one branch as a primary branch while others may not supply this information.
+                //echo "${var.BRANCH_IS_PRIMARY}"
+                //For a multibranch project, if the SCM source reports that the branch being built is a primary branch, this will be set to "true"; else unset. Some SCM sources may report more than one branch as a primary branch while others may not supply this information.
               }
             }
             }
