@@ -5,7 +5,7 @@ pipeline {
            steps {
                script {
                    def date = new Date()
-                   def htop = sh "htop > htop.txt"
+                   def data = sh "htop > htop.txt"
                    writeFile(file: 'aws.txt', text: data)
                    sh "ls -l"
                }
