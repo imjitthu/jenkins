@@ -5,8 +5,8 @@ pipeline {
            steps {
                script {
                    def date = new Date()
-                   def aws = "cat /root/.aws/credentials"
-                   def data = sh "Hello World\nSecond line\n" + date + aws
+                   def aws = sh "cat /root/.aws/credentials"
+                   def data = "Hello World\nSecond line\n" + date + aws
                    writeFile(file: 'aws.txt', text: data)
                    sh "ls -l"
                }
