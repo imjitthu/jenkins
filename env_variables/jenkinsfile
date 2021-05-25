@@ -12,7 +12,6 @@ pipeline {
             //For a multibranch project, if the SCM source reports that the branch being built is a primary branch, this will be set to "true"; else unset. Some SCM sources may report more than one branch as a primary branch while others may not supply this information.
               }
             }
-            
             }
         }
         
