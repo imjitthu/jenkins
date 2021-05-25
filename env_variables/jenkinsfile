@@ -5,7 +5,7 @@ pipeline {
     stages ('The following variables are available to shell scripts') {
         stage ('BRANCH_NAME') {
             steps {
-                print(BRANCH_NAME)
+                print(env.BRANCH_NAME)
                 //echo "${BRANCH_NAME}"
                 //For a multibranch project, this will be set to the name of the branch being built, for example in case you wish to deploy to production from master but not from feature branches; if corresponding to some kind of change request, the name is generally arbitrary (refer to CHANGE_ID and CHANGE_TARGET).
 
