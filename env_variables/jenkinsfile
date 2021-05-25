@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     stages ('The following variables are available to shell scripts') {
-        stage ('BRANCH_NAME') {
+        stage ('All Variables') {
             steps {
                 print(env.BRANCH_NAME)
                 //echo "${BRANCH_NAME}"
