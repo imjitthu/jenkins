@@ -2,7 +2,7 @@ pipeline {
 
     agent any
 
-    stages ('While loop') {
+    stages {
         stage ('While loop stage') {
             steps {
             script {
