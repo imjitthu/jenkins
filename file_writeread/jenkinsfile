@@ -1,21 +1,20 @@
 pipeline {
-   agent any
+   agent { label 'master' }
    stages {
-       stage('Write File') {
+       stage('write') {
            steps {
                script {
                    def date = new Date()
-                   def data =  sh "ls -alh  > ls.txt"
-                   writeFile(file: 'ls.txt', text: data)
-                   println(date)
+                   def data = "Hello World\nSecond line\n" + date
+                   writeFile(file: 'test.txt', text: data)
                    sh "ls -l"
                }
            }
        }
-       stage('Read File') {
+       stage('read') {
            steps {
                script {
-                   def data = readFile(file: 'ls.txt')
+                   def data = readFile(file: 'test.txt')
                    println(data)
                }
            }
