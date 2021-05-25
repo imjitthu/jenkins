@@ -41,3 +41,6 @@ pipeline {
         }
   }
 }
+
+// when used with allOf, anyOf, branch, buildingTag, changeRequest, changelog, 
+//changeset, environment, equals, expression, isRestartedRun, not, tag, triggeredBy
