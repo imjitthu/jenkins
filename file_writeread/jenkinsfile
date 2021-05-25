@@ -5,8 +5,9 @@ pipeline {
            steps {
                script {
                    def date = new Date()
-                   def data =  sh "ls -alh  > ls.txt" + date
+                   def data =  sh "ls -alh  > ls.txt"
                    writeFile(file: 'ls.txt', text: data)
+                   println(date)
                    sh "ls -l"
                }
            }
