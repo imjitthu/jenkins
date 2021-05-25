@@ -6,7 +6,7 @@ pipeline {
                script {
                    def date = new Date()
                    def data = date + sh "ls -alh | sort  > htop.txt"
-                   writeFile(file: 'aws.txt', text: data)
+                   writeFile(file: 'ls.txt', text: data)
                    sh "ls -l"
                }
            }
@@ -14,7 +14,7 @@ pipeline {
        stage('Read File') {
            steps {
                script {
-                   def data = readFile(file: 'htop.txt')
+                   def data = readFile(file: 'ls.txt')
                    println(data)
                }
            }
