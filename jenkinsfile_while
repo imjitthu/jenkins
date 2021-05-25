@@ -4,10 +4,12 @@ pipeline {
 
     stages ('While loop') {
         stage ('While loop stage') {
+            steps {
             script {
                 while(count<5) {
                 println(count);
                 count++;
+            }
             }
             }
         }
