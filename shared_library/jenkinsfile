@@ -12,14 +12,6 @@ pipeline {
 }
 
 
-
-//helloWorld(dayOfWeek:'Monday', name:'Jithendar')
-
-// @Library('roboshop') _
-
-// sample()
-
-
 // def call(Map config = [:]) {
 //     sh "echo Hello ${config.name}. Today is ${config.dayOfWeek}."
 // }
