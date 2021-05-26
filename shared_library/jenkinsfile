@@ -1,4 +1,4 @@
-@Library('shared_library@1.0') _
+@Library('shared_library') _
 helloWorld(dayOfWeek:'Monday', name:'Jithendar')
 
 // @Library('roboshop') _
