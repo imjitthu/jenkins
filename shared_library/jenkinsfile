@@ -15,3 +15,5 @@ pipeline {
 // def call(Map config = [:]) {
 //     sh "echo Hello ${config.name}. Today is ${config.dayOfWeek}."
 // }
+
+//Might be a branch name, tag, commit hash, etc., according to the SCM.
