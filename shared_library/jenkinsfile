@@ -5,7 +5,7 @@ pipeline {
     stages ('Shared Library Example') {
         stage ('shared library') {
             steps {
-                helloWorld(dayOfWeek:'Monday', name:'Jithendar')
+                helloWorldExternal(dayOfWeek:'Monday', name:'Jithendar')
             }
         }
     }
