@@ -5,7 +5,6 @@ pipeline {
     stages ('Shared Library Example') {
         stage ('shared library') {
             steps {
-                sh 'pwd'
                 helloWorldExternal(dayOfWeek:'Monday', name:'Jithendar')
             }
         }
