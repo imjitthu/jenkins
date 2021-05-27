@@ -5,7 +5,7 @@ pipeline {
     stages ('Shared Library Example') {
         stage ('shared library') {
             steps {
-                echo BUILD_NUMBER
+                heartQ()
                 //helloWorldExternal(dayOfWeek:'Monday', name:'Jithendar')
             }
         }
