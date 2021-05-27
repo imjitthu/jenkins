@@ -6,7 +6,6 @@ pipeline {
         stage ('shared library') {
             steps {
                 echo BUILD_NUMBER
-                echo env.agentLabel
                 //helloWorldExternal(dayOfWeek:'Monday', name:'Jithendar')
             }
         }
