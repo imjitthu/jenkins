@@ -16,12 +16,42 @@ pipeline {
 
     environment {
         name = "jithendar"
+        AWS  =  credentials('awskey')
     }
 
     stages {
         stage ('PollSCM') {
+            when { 
+                branch 'master' 
+                //when { buildingTag() } Execute the stage when the build is building a tag.
+                //when { changelog '.*^\\[DEPENDENCY\\] .+$' } Execute the stage if the build’s SCM changelog contains a given regular expression pattern.
+                //when { changeset "**/*.js" } changeset Execute the stage if the build’s SCM changeset contains one or more files matching the given pattern.
+                //when { changeRequest authorEmail: "[\\w_-.]+@example.com", comparator: 'REGEXP' }
+                //when { environment name: 'DEPLOY_TO', value: 'production' }
+                // when { equals expected: 2, actual: currentBuild.number }
+                //when { expression { return params.DEBUG_BUILD } }
+                //when { tag "release-*" } / when { tag pattern: "release-\\d+", comparator: "REGEXP"}
+                //when { not { branch 'master' } }
+                //when { allOf { branch 'master'; environment name: 'DEPLOY_TO', value: 'production' } }
+                //when { anyOf { branch 'master'; branch 'staging' } }
+                //when { triggeredBy 'SCMTrigger' }
+                //when { triggeredBy 'TimerTrigger' }
+                //when { triggeredBy 'UpstreamCause' }
+                //when { triggeredBy cause: "UserIdCause", detail: "vlinde" }
+                //when {
+                //expression { BRANCH_NAME ==~ /(production|staging)/ }
+                //anyOf {
+                //    environment name: 'DEPLOY_TO', value: 'production'
+                //    environment name: 'DEPLOY_TO', value: 'staging'
+                //}
+                }
             triggers { pollSCM('H */4 * * 1-5') }
             steps {
+                sh '''
+                export AWS_ACCESS_KEY_ID=${AWS_USR}
+                export AWS_SECRET_ACCESS_KEY=${AWS_PSW}
+                echo aws credentials working fine
+                '''
                 echo 'pollSCM: Accepts a cron-style string to define a regular interval at which Jenkins should check for new source changes. If new changes exist, the Pipeline will be re-triggered. For example: triggers { pollSCM('H */4 * * 1-5') }'
             }
         }
@@ -62,12 +92,26 @@ pipeline {
                 echo "Hello ${var.name}"
             }
         }
+        stage ('Parallel') {
+            parallel {
+                stage ('Parallel Stage One') {
+                    steps {
+                        echo 'parallel stage one is successful'
+                    }
+                stage ('Parallel Stage Two') {
+                    steps {
+                        echo 'parallel stage two is successful'
+                    }
+                }
+                }
+            } //parallel
+        }
         post {
             always {
                 sh 'Pipeline successfully executed'
                 cleanWs()
             }
-        }
-    }
-}
+        } //post
+    } //stages
+} //pipeline
 
