@@ -5,7 +5,9 @@ pipeline {
     stages ('Shared Library Example') {
         stage ('shared library') {
             steps {
-                helloWorldExternal(dayOfWeek:'Monday', name:'Jithendar')
+                echo env.BUILD_NUMBER
+                evenOdd()
+                //helloWorldExternal(dayOfWeek:'Monday', name:'Jithendar')
             }
         }
     }
