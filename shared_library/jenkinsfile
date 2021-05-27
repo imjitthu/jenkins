@@ -6,6 +6,7 @@ pipeline {
         stage ('shared library') {
             steps {
                 echo env.BUILD_NUMBER
+                echo env.BUILD_NUMBER.toInteger()
                 evenOdd()
                 //helloWorldExternal(dayOfWeek:'Monday', name:'Jithendar')
             }
