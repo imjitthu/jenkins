@@ -1,6 +1,18 @@
 pipeline {
     agent any 
 
+    parameters {
+        parameters { password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'A secret password') }
+        parameters { choice(name: 'CHOICES', choices: ['one', 'two', 'three'], description: '') }
+        parameters { booleanParam(name: 'DEBUG_BUILD', defaultValue: true, description: '') }
+        parameters { text(name: 'DEPLOY_TEXT', defaultValue: 'One\nTwo\nThree\n', description: '') }
+        parameters { string(name: 'DEPLOY_ENV', defaultValue: 'staging', description: '') }
+    }
+
+    environment {
+        name = "jithendar"
+    }
+
     stages {
         stage ('PollSCM') {
             triggers { pollSCM('H */4 * * 1-5') }
@@ -18,6 +30,37 @@ pipeline {
             triggers { upstream(upstreamProjects: 'job1,job2', threshold: hudson.model.Result.SUCCESS) }
             steps {
                 echo 'upstream Accepts a comma-separated string of jobs and a threshold. When any job in the string finishes with the minimum threshold, the Pipeline will be re-triggered. For example: triggers { upstream(upstreamProjects: 'job1,job2', threshold: hudson.model.Result.SUCCESS) }'
+            }
+        }
+        stage('Inputs') {
+            input {
+                message "Should we continue to build the Job?"
+                ok "Yes, we should."
+                submitter "Jiendar, xXx"
+                parameters { string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')}
+            }
+            steps {
+                echo "Hello, ${PERSON}, nice to meet you."
+            }
+        }
+        stage ('Print Parameters') {
+            steps {
+                echo "Hello ${params.PERSON}"
+                echo "Biography: ${params.BIOGRAPHY}"
+                echo "Toggle: ${params.TOGGLE}"
+                echo "Choice: ${params.CHOICE}"
+                echo "Password: ${params.PASSWORD}"
+            }
+        }
+        stage ('Print Variable') {
+            steps {
+                echo "Hello ${var.name}"
+            }
+        }
+        post {
+            always {
+                sh 'Pipeline successfully executed'
+                cleanWs()
             }
         }
     }
