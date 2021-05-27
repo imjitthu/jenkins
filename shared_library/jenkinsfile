@@ -6,7 +6,7 @@ pipeline {
         stage ('shared library') {
             steps {
                 echo env.BUILD_NUMBER
-                evenOdd()
+                easyPipeline()
                 //helloWorldExternal(dayOfWeek:'Monday', name:'Jithendar')
             }
         }
