@@ -65,3 +65,23 @@ pipeline {
 // not	            When the nested condition is false
 // allOf	        When all of the nested conditions are true
 // anyOf	        When at least one of the nested conditions is true
+
+// when {
+//     anyOf {
+//         triggeredBy cause: 'UpstreamCause', detail: 'Job A'
+//         triggeredBy cause: 'UpstreamCause', detail: 'Job C'
+//     }
+// }
+
+
+// triggeredBy
+
+// Execute the stage when the current build has been triggered by the param given. For example:
+
+// when { triggeredBy 'SCMTrigger' }
+
+// when { triggeredBy 'TimerTrigger' }
+
+// when { triggeredBy 'UpstreamCause' }
+
+// when { triggeredBy cause: "UserIdCause", detail: "vlinde" }
