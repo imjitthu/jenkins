@@ -68,7 +68,7 @@ pipeline {
 
 // when {
 //     anyOf {
-//         triggeredBy cause: 'UpstreamCause', detail: 'Job A'
+//         triggeredBy cause: 'UpstreamCause', detail: 'K8s/eks_cluster'
 //         triggeredBy cause: 'UpstreamCause', detail: 'Job C'
 //     }
 // }
