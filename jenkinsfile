@@ -11,7 +11,7 @@ pipeline {
 
     stage('frontend') {
       steps {
-        sh 'pwd; ls'
+        powershell 'pwd; ls'
         archiveArtifacts artifacts: '*.*', followSymlinks: false, onlyIfSuccessful: true
       }
     }
