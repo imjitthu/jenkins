@@ -13,6 +13,7 @@ pipeline {
       steps {
         powershell 'pwd; ls'
         archiveArtifacts artifacts: '*.*', followSymlinks: false, onlyIfSuccessful: true
+        powershell 'pwd; ls'
       }
     }
   }
