@@ -1,77 +1,19 @@
 pipeline {
+
   agent any
 
+  options {
+    copyArtifactPermission 'test-pipeline'
+    durabilityHint 'MAX_SURVIVABILITY'
+    timestamps
+  }
   stages {
 
     stage('frontend') {
       steps {
-        sh 'pwd'
-        build job: 'rs-project/frontend'
+        sh 'pwd; ls'
+        archiveArtifacts artifacts: '*.*', followSymlinks: false, onlyIfSuccessful: true
       }
     }
   }
 }
-
-//     stage('Frontend') {
-//       steps {
-//         build job: 'Terraform-Releases/FRONTEND', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
-//       }
-//     }
-
-//     stage('ALB & Databases') {
-//       parallel {
-
-//         stage('ALB') {
-//           steps {
-//             build job: 'Terraform-Releases/ALB', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
-//           }
-//         }
-
-//         stage('Databases') {
-//           steps {
-//             build job: 'Terraform-Releases/DATABASES', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
-//           }
-//         }
-
-//       }
-//     }
-
-//     stage('Components') {
-//       parallel {
-
-//         stage('Cart') {
-//           steps {
-//             build job: 'Terraform-Releases/CART', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
-//           }
-//         }
-
-//         stage('Catalogue') {
-//           steps {
-//             build job: 'Terraform-Releases/CATALOGUE', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
-//           }
-//         }
-
-//         stage('User') {
-//           steps {
-//             build job: 'Terraform-Releases/USER', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
-//           }
-//         }
-
-//         stage('Shipping') {
-//           steps {
-//             build job: 'Terraform-Releases/SHIPPING', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
-//           }
-//         }
-
-//         stage('Payment') {
-//           steps {
-//             build job: 'Terraform-Releases/PAYMENT', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
-//           }
-//         }
-
-//       }
-//     }
-
-//   }
-
-// }
