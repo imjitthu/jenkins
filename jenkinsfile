@@ -11,7 +11,6 @@ pipeline {
 
     stage('frontend') {
       steps {
-        cleanWs()
         powershell 'dir'
         archiveArtifacts artifacts: '*.*', followSymlinks: false, onlyIfSuccessful: true
         powershell 'pwd; ls'
