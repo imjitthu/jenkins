@@ -5,7 +5,7 @@ pipeline {
   options {
     copyArtifactPermission 'test-pipeline'
     durabilityHint 'MAX_SURVIVABILITY'
-    timestamps
+    //timestamps
   }
   stages {
 
