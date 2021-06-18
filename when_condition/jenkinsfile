@@ -62,7 +62,7 @@ pipeline {
 
 // And there even are some logic operators:
 // Condition	    What does it check?
-// not	            When the nested condition is false
+// not	          When the nested condition is false
 // allOf	        When all of the nested conditions are true
 // anyOf	        When at least one of the nested conditions is true
 

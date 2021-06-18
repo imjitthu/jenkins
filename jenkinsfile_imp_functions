@@ -28,7 +28,7 @@ pipeline {
                 //when { changeset "**/*.js" } changeset Execute the stage if the build’s SCM changeset contains one or more files matching the given pattern.
                 //when { changeRequest authorEmail: "[\\w_-.]+@example.com", comparator: 'REGEXP' }
                 //when { environment name: 'DEPLOY_TO', value: 'production' }
-                // when { equals expected: 2, actual: currentBuild.number }
+                //when { equals expected: 2, actual: currentBuild.number }
                 //when { expression { return params.DEBUG_BUILD } }
                 //when { tag "release-*" } / when { tag pattern: "release-\\d+", comparator: "REGEXP"}
                 //when { not { branch 'master' } }
