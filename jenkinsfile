@@ -14,7 +14,7 @@ pipeline {
         powershell 'dir'
         archiveArtifacts artifacts: '*', followSymlinks: false, onlyIfSuccessful: true
         powershell 'dir'
-        sshPublisher(publishers: [sshPublisherDesc(configName: 'workstation', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/tmp', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'abc.txt')], usePromotionTimestamp: false, /useWorkspaceInPromotion: false, verbose: false)])
+        // sshPublisher(publishers: [sshPublisherDesc(configName: 'workstation', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/tmp', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'abc.txt')], usePromotionTimestamp: false, /useWorkspaceInPromotion: false, verbose: false)])
       }
     }
   }
