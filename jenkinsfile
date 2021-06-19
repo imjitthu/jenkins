@@ -11,7 +11,7 @@ pipeline {
     stage('frontend') {
       steps {
         powershell 'dir'
-        archiveArtifacts artifacts: '*', followSymlinks: false, onlyIfSuccessful: true
+        archiveArtifacts artifacts: '*.*', followSymlinks: false, onlyIfSuccessful: true
         powershell 'dir'
       }
     }
